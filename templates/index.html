@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tomato Leaf Disease Prediction</title>
+    <style>
+        body {
+            background: linear-gradient(145deg, #013220, #025e1a, #038c3e);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+        .container {
+            background: #014d25;
+            box-shadow: 10px 10px 30px #012d18, -10px -10px 30px #016c32;
+            padding: 30px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        input[type=file], input[type=submit] {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+        }
+        input[type=submit] {
+            background: #03a63c;
+            color: white;
+            font-weight: bold;
+        }
+        img {
+            margin-top: 20px;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px #011f0f;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍅 Tomato Leaf Disease Prediction</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <br>
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction %}
+            <h2>Prediction:</h2>
+            <p style="font-size: 20px; font-weight: bold; color: #a7ff83;">
+                {{ prediction }}
+            </p>
+            <h2>Confidence:</h2>
+            <p style="font-size: 18px;">{{ confidence }} %</p>
+            <img src="{{ img_path }}" alt="Uploaded Leaf">
+        {% endif %}
+    </div>
+</body>
+</html>

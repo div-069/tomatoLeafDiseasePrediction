@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            background-color: #228B22; /* green leaf color */
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+        }
+        img {
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 28px;
+        }
+        p {
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Prediction Result</h1>
+        <img src="{{ img_path }}" width="300">
+        <p>Prediction:<br>{{ prediction }}</p>
+        <p>Confidence:<br>{{ confidence }} %</p>
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>
