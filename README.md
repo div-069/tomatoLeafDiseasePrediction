@@ -75,5 +75,9 @@ Frontend: HTML + Jinja2
 **Divyanshu Chaudhary**  
 GitHub: [div-069](https://github.com/div-069)
 
+**Dipanshu**
+Github: [Dipanshu-1033].(https://github.com/Dipanshu-1033).
+
 ## 🧾 License
 This project is licensed under the MIT License. Feel free to use, modify, and distribute it.
+
