@@ -1,0 +1,145 @@
+===============================
+🍅 TOMATO LEAF DISEASE DETECTION
+===============================
+
+📘 PROJECT OVERVIEW
+-------------------
+This project is a web-based application that helps identify different types of tomato leaf diseases using Deep Learning.
+It is built using FLASK (for the web interface) and TENSORFLOW (for the trained CNN model).
+
+The goal of this system is to make it easy for anyone — even without technical knowledge — to upload a tomato leaf image
+and instantly get a prediction of whether it’s healthy or infected, and with what kind of disease.
+
+Additionally, the system also evaluates the model’s accuracy and performance on test or validation data and presents
+the results in a clear and visual manner.
+
+This project brings Machine Learning and Agriculture together, helping farmers and researchers diagnose plant diseases early.
+
+
+🧠 HOW IT WORKS (IN SIMPLE TERMS)
+---------------------------------
+1. The trained model file (tomato_model.h5) is loaded.
+2. A user uploads a tomato leaf image from the web interface.
+3. The system pre-processes the image (resizes it to 224x224 pixels and normalizes the values).
+4. The model predicts the probability of each disease class.
+5. The class with the highest probability becomes the final prediction.
+6. The result (disease name and confidence percentage) is shown on the website.
+
+Additionally, before the Flask app starts, the program automatically checks the model’s accuracy on test data, 
+prints performance reports, and generates beautiful plots (confusion matrix and bar charts).
+
+
+💻 FILES AND FOLDERS
+--------------------
+1. app.py
+   - The main Python file that runs the Flask web server and connects everything.
+   - Contains both the image prediction logic and model evaluation logic.
+
+2. tomato_model.h5
+   - The trained Deep Learning model saved in Keras HDF5 format.
+   - This model understands and classifies tomato leaf diseases.
+
+3. tomato_dataset/
+   - Folder that contains the dataset (train/test/validation folders).
+   - Each subfolder represents one disease category, for example:
+       → Bacterial_Spot
+       → Early_Blight
+       → Late_Blight
+       → Healthy
+     The model uses these folders to identify which disease corresponds to each image.
+
+4. static/uploads/
+   - Where uploaded images are temporarily stored before prediction.
+
+5. templates/index.html
+   - The web page shown to the user.
+   - Contains the upload form and displays the predicted results beautifully.
+
+
+🌿 HOW THE FLASK APP WORKS
+--------------------------
+1. The app starts by loading the trained model.
+2. When you visit the webpage (http://127.0.0.1:5000/), you can upload a leaf image.
+3. Once uploaded, the image is saved to the "static/uploads" folder.
+4. The model processes the image and predicts the disease type.
+5. The result is shown along with a confidence percentage.
+
+For example:
+   Prediction: Early Blight
+   Confidence: 98.7%
+
+
+📊 MODEL EVALUATION EXPLAINED
+-----------------------------
+Before starting the app, the script automatically runs an evaluation on your test or validation dataset.
+
+This evaluation shows:
+- Overall model accuracy (example: 96.45%)
+- Detailed classification report:
+     • Precision → How many predicted positives are actually correct.
+     • Recall → How many actual positives were correctly identified.
+     • F1-score → A balance between Precision and Recall.
+
+The results are printed in the terminal and visualized through:
+- Confusion Matrix: A heatmap showing correct vs wrong predictions.
+- Bar Graphs: Comparing Precision, Recall, and F1-score for each class.
+
+
+⚙️ HOW TO RUN THE PROJECT
+-------------------------
+Step 1️⃣ – Make sure you have Python installed.
+Step 2️⃣ – Open a terminal or command prompt.
+Step 3️⃣ – Navigate to your project folder.
+Step 4️⃣ – Create and activate a virtual environment (recommended).
+Step 5️⃣ – Install required libraries:
+           pip install tensorflow flask numpy scikit-learn matplotlib seaborn
+Step 6️⃣ – Place your model (tomato_model.h5) in the project folder.
+Step 7️⃣ – Make sure your dataset folders (train/test/val) exist and are properly organized.
+Step 8️⃣ – Run the app:
+           python app.py
+Step 9️⃣ – Open your browser and go to:
+           http://127.0.0.1:5000/
+Step 🔟 – Upload a tomato leaf image to get instant predictions!
+
+
+🧩 KEY PYTHON MODULES USED
+--------------------------
+- Flask → Creates the web server and handles user interaction.
+- TensorFlow / Keras → Loads and runs the trained Deep Learning model.
+- NumPy → Handles mathematical operations and image arrays.
+- Matplotlib & Seaborn → Generate evaluation plots and charts.
+- Scikit-learn → Used for evaluation metrics like Precision, Recall, and F1-score.
+
+
+📈 EXAMPLE OUTPUT
+-----------------
+✅ Model Accuracy on Validation Set: 96.45%
+
+🔍 Classification Report:
+    Disease Name         Precision    Recall    F1-score
+    ----------------------------------------------------
+    Bacterial Spot         0.97        0.95       0.96
+    Early Blight           0.95        0.97       0.96
+    Healthy                0.99        0.98       0.98
+
+Confusion Matrix and Performance Charts are also displayed visually.
+
+
+💡 BENEFITS OF THIS SYSTEM
+--------------------------
+- Helps farmers detect tomato plant diseases quickly and accurately.
+- Reduces manual diagnosis time and human error.
+- Can be expanded to detect diseases in other plants.
+- Uses state-of-the-art AI to assist in smart agriculture.
+
+
+👨‍💻 AUTHOR
+------------
+Developed by: **Divyanshu Chaudhary and the team** 
+Co-developers: **Dipanshu, Sahil, Mridul, Chitwan** 
+GitHub: https://github.com/div-069  
+License: MIT (Free to use and modify)
+
+===============================
+✨ END OF DOCUMENTATION ✨
+===============================
